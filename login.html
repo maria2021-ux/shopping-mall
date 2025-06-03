@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        h2 {
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+        p {
+            margin: 10px 0 20px;
+            color: #555;
+        }
+        .input-field {
+            width: 60%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .submit-btn {
+            width: 22%;
+            padding: 15px;
+            background-color: #1e5339; /* Dark green color */
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            background-color: #1a4731; /* Slightly darker shade for hover */
+        }
+        .forgot-password {
+            text-align: right;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+        .form-link {
+            margin-top: 20px;
+        }
+        .form-link a {
+            color: #9a9a9a;
+            text-decoration: none;
+        }
+        .form-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h2>Login</h2>
+        <p>Please enter your e-mail and password:</p>
+        <form id="loginForm">
+            <input type="email" id="email" class="input-field" placeholder="E-mail" required>
+            <input type="password" id="password" class="input-field" placeholder="Password" required>
+            <div class="forgot-password">
+                <a href="#"></a>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <div class="form-link">
+            First time logging in on our new site? Contact our team on chat if you have trouble logging in.<br>
+            New customer? <a href="signup.html">Create an account</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const data = { email: email, password: password };
+
+            fetch('login.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(result => {
+                if (result.success) {
+                    // Redirect based on the server response
+                    window.location.href = result.redirect || 'titlebartest.html';
+                } else {
+                    alert(result.message || 'An error occurred.');
+                }
+            })
+            .catch(error => {
+                alert('Error: ' + error.message);
+            });
+        });
+    </script>
+
+</body>
+</html>

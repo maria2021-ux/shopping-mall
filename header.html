@@ -1,0 +1,149 @@
+<header>
+    <style>
+        /* Title bar styling */
+        .title-bar {
+            background-color: #968e8e; /* Dark green background */
+            color: #fff; /* White text color for contrast */
+            padding: 10px 20px; /* Increase the padding for a taller bar */
+            text-align: center;
+            font-size: 24px; /* Larger font size */
+            position: relative;
+            overflow: hidden; /* Hide overflow for smooth transitions */
+            white-space: nowrap; /* Ensure text stays on a single line */
+        }
+        
+        /* Container for title bar content */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Logo styling */
+        .logo img {
+            height: 60px; /* Increase the height for a more prominent logo */
+            width: auto; /* Maintain aspect ratio */
+        }
+        
+        /* Navigation links styling */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        nav li {
+            margin-left: 30px; /* Increase spacing between navigation items */
+        }
+        
+        nav a {
+            color: #fff; /* White text color for better readability */
+            text-decoration: none;
+            font-size: 18px; /* Larger font size for better readability */
+            font-weight: bold;
+        }
+        
+        nav a:hover {
+            color: #c6e6c6; /* Lighter green on hover */
+            text-decoration: underline; /* Underline on hover */
+        }
+        
+        /* Icon styling */
+        ul li a img {
+            width: 28px; /* Increase size for better visibility */
+            height: 28px; /* Maintain square aspect ratio */
+            margin-left: 10px; /* Add some spacing before icons */
+        }
+        
+        /* Search, Account, and Cart icons */
+        .actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .actions a {
+            color: #fff;
+            margin-left: 20px;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .actions a:hover {
+            color: #c6e6c6; /* Lighter green on hover */
+        }
+        
+        /* Advanced Title Bar Design */
+        .title-bar::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #1e5339, #004d00); /* Gradient for a more dynamic look */
+            opacity: 0.5; /* Subtle overlay for depth */
+            z-index: -1; /* Place behind the content */
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #1e5339; /* Matching dark green */
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        footer nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+        }
+
+        footer li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #c6e6c6; /* Slightly lighter green on hover */
+            text-decoration: underline;
+        }
+    </style>
+
+    <div class="title-bar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logosss.avif" alt="EarthHero Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="products.php">Products</a></li>
+                    <li><a href="Shipping&Return.html">Shipping&Return policy</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="customer_service.html">Customer Service Center</a></li>
+                    <li><a href="#" id="search-icon"><img src="images/search-interface-symbol.png" alt="Search Icon"></a></li>
+                    <li><a href="login.html" id="account-icon"><img src="images/user.png" alt="Account Icon"></a></li>
+                    <li><a href="cart.html" id="cart-icon"><img src="images/shopping-cart.png" alt="Cart Icon"></a></li>
+                </ul>
+            </nav>
+            <div class="actions">
+                <a href="#" class="search"><i class="fas fa-search"></i></a>
+                <a href="#" class="account"><i class="fas fa-user"></i></a>
+                <a href="#" class="cart"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </div>
+</header>

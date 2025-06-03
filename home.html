@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <title>Eco-Friendly & Sustainably Made Products</title>
+    <meta name="description" content="EarthHero wants to make sustainable shopping so easy everyone does it. Shop eco-friendly products on the one-stop shop for everyone who loves the planet!">
+    <link rel="canonical" href="https://earthhero.com/">
+    
+    <style>
+        /* Title bar styling */
+        .title-bar {
+            background-color: #1e5339; /* Dark green background */
+            color: rgb(247, 246, 246);
+            padding: 20px 20px; /* Increase the top/bottom padding for a taller bar */
+            text-align: center;
+            font-size: 20px;
+            position: relative;
+            overflow: hidden; /* Hide overflow to maintain the sliding effect */
+            white-space: nowrap; /* Ensure text stays on a single line */
+        }
+
+        .title-bar-content {
+            display: inline-block;
+            transition: transform 0.5s ease-in-out;
+            white-space: nowrap; /* Ensure text stays on a single line */
+        }
+
+        .title-bar-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 15px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .title-bar-button.prev {
+            left: 10px;
+            margin-left: 300px;
+        }
+
+        .title-bar-button.next {
+            right: 10px;
+            margin-right: 300px;
+        }
+
+        .announcement-text {
+            background-color: #f9f9f9;
+            color: #ffffff;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .new-title-bar .header__logo-image {
+            max-width: 100%; /* Responsive scaling */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 400px; /* Set maximum height */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0px;
+            background-color: #ffffff; /* Light eco-friendly background */
+        }
+
+        .title-bar {
+            background-color: #1e5339; /* Dark green background */
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 20px;
+            position: relative;
+        }
+
+        .title-bar .logo img {
+            max-width: 100%; /* Responsive scaling */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        header {
+            background-color: #ffffff; /* Green */
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        /* Container for the logo and content */
+        .container {
+            max-width: 1200px; /* Maximum width for the container */
+            margin: 0 auto; /* Center container */
+            padding: 0 15px; /* Padding for the container */
+            align-items: center;
+        }
+
+        /* Logo container styling */
+        .logo {
+            float: left; /* Aligns the logo to the left */
+        }
+
+        /* Styling for the logo image */
+        .logo img {
+            height: 20px; /* Sets the height of the logo image */
+            width: auto; /* Maintain aspect ratio */
+        }
+
+        nav {
+            float: right;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .actions {
+            float: right;
+        }
+
+        .actions a {
+            display: inline-block;
+            margin-left: 15px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .hero {
+            background-image: url("hero-bg.jpg"); /* Replace with your hero background image */
+            background-size: cover;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+        }
+
+        .cta {
+            background-color: #1e5339; /* Dark green */
+            color: #fff;
+            padding: 30px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .code {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .products {
+            padding: 50px 0;
+        }
+
+        .products h2 {
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 30px;
+            margin-top: 30px;
+        }
+
+        .product {
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+        }
+
+        .product h3 {
+            margin-top: 10px;
+        }
+
+        .product p {
+            margin-top: 5px;
+        }
+
+        .add-to-cart {
+            background-color: #1e5339; /* Dark green */
+            color: #fff;
+            padding: 20px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .about {
+            padding: 50px 0;
+        }
+
+        .about h2 {
+            text-align: center;
+        }
+
+        .about p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            display: inline;
+            margin-right: 15px; /* Adjust spacing as needed */
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        ul li a img {
+            width: 24px; /* Adjust size as needed */
+            height: 24px; /* Adjust size as needed */
+        }
+
+        /* Search Menu Styling */
+        .search-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        .search-menu.open {
+            transform: translateX(0);
+        }
+
+        .search-menu .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .search-menu input[type="text"] {
+            width: calc(100% - 40px); /* Adjusted for padding and border */
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Existing Title Bar -->
+    <div class="title-bar">
+        <button class="title-bar-button prev" aria-label="Previous sentence">&#9664;</button>
+        <div class="title-bar-content" id="title-bar-content">
+            <span id="title-bar-text">🎒 <strong>15% OFF</strong> our B2S Collection w/ code <strong>SCHOOL15</strong>—ends <strong>08.18</strong>! 📚</span>
+        </div>
+        <button class="title-bar-button next" aria-label="Next sentence">&#9654;</button>
+    </div>
+    
+   
+    <script>
+        // JavaScript for title bar sentence swapping with animation
+        const sentences = [
+            '🎒 <strong>15% OFF</strong> our B2S Collection w/ code <strong>SCHOOL15</strong>—ends <strong>08.18</strong>! 📚',
+            'Shop NEW products that just dropped! <a href="https://earthhero.com/collections/new-arrivals">Shop Here</a>',
+            'All orders ship plastic-free and carbon-neutral! <a href="your-html-page.html">Shop Now</a>',
+            'Enjoy free shipping on US orders $75+'
+        ];
+
+        let currentIndex = 0;
+        const contentElement = document.getElementById('title-bar-content');
+
+        function updateTitleBar() {
+            const titleBarText = document.getElementById('title-bar-text');
+            titleBarText.innerHTML = sentences[currentIndex];
+        }
+
+        function nextSentence() {
+            contentElement.style.transform = 'translateX(-100%)';
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % sentences.length;
+                updateTitleBar();
+                contentElement.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    contentElement.style.transform = 'translateX(0)';
+                }, 50); // Small delay to reset position
+            }, 500); // Match the duration of the transition
+        }
+
+        function prevSentence() {
+            contentElement.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                currentIndex = (currentIndex - 1 + sentences.length) % sentences.length;
+                updateTitleBar();
+                contentElement.style.transform = 'translateX(-100%)';
+                setTimeout(() => {
+                    contentElement.style.transform = 'translateX(0)';
+                }, 50); // Small delay to reset position
+            }, 500); // Match the duration of the transition
+        }
+
+        document.querySelector('.title-bar-button.next').addEventListener('click', nextSentence);
+        document.querySelector('.title-bar-button.prev').addEventListener('click', prevSentence);
+
+        // Automatic swapping every 4.5 seconds
+        setInterval(nextSentence, 4500);
+
+        // JavaScript for Search Menu
+        const searchIcon = document.getElementById('search-icon');
+        const searchMenu = document.getElementById('search-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        searchIcon.addEventListener('click', function() {
+            searchMenu.classList.toggle('open');
+        });
+
+        closeMenu.addEventListener('click', function() {
+            searchMenu.classList.remove('open');
+        });
+    </script>
+</body>
+</html>

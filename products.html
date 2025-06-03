@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Your Page Title</title>
+</head>
+<body>
+
+    <!-- Placeholder for Header -->
+    <div id="header-placeholder"></div>
+
+    <script>
+        // Load the header.html file
+        fetch('header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    </script>
+
+    <!-- Page Content -->
+    <div class="content">
+        <!-- Your content goes here -->
+    </div>
+
+</body>
+</html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-item {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+        .product-item:last-child {
+            border-bottom: none;
+        }
+        .product-images {
+            flex: 1;
+            display: flex;
+            gap: 10px;
+        }
+        .product-images img {
+            max-width: 100px;
+            border-radius: 4px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product-details {
+            flex: 2;
+            padding-left: 20px;
+        }
+        .product-name {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #1e5339;
+            margin-bottom: 10px;
+        }
+        .product-price {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #1e5339;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-right: 10px;
+            border-radius: 4px;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .btn-add-to-cart {
+            background-color: #4CAF50; /* Green color */
+        }
+        .btn-add-to-cart:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+        .btn-see-more {
+            background-color: #1e5339; /* Dark green color */
+        }
+        .btn-see-more:hover {
+            background-color: #16472b; /* Darker shade for hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="product-container">
+    <h2>All Products</h2>
+
+    <!-- PHP code to fetch and display products -->
+    <?php include 'products.php'; ?>
+
+</div>
+
+</body>
+</html>
